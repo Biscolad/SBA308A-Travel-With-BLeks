@@ -5,4 +5,4 @@ function shuffleFrames() {
         itemContainer.appendChild(itemContainer.children[Math.random() * i | 0]);
     }
 }
-shuFFleFrames();
+shuffleFrames();
