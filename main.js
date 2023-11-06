@@ -12,8 +12,11 @@ const options = {
 // using fetch API to communicate with an external API
 async function fetchData() {
     try {
-        const response = await fetch(url, options);
-        const result = await response.text();
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error ('HTTP error!: error');
+        }
+        const result = await response.json();
         console.log(result);
         // const data = await response.json();
 
@@ -21,15 +24,31 @@ async function fetchData() {
         console.error(error);
     }
   }
+  fetchData();
   
-//   window.addEventListener('load', fetchData);
 
 
 //CREATE USER INTERACTION
-// ADD Event listener for DROP DOWN LIST
-document.querySelector('select').addEventListener('click', () => {
-    const searchCountry = document.getElementById('destinationCountry').value;
+// ADD Event listener for COUNTRY SEARCH
+const searchDestination = document.getElementById('destinationCountry');
+searchDestination.addEventListener('change', async() => {
+    const selectedCountry = searchDestination.ariaValueMax;
+    const response = await fetch(url);
+    if (response.ok) {
+        const result = await response.json();
+    }
+});
    
-  });
+
   
 
+//ENABLE USER MANIPULATION THROUGH POST REQUEST
+
+
+
+
+
+
+
+
+ 
