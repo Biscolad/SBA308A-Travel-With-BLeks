@@ -18,7 +18,6 @@ body {
     z-index: 2;
     width: 100px;
     margin-top: 0px;
-
 }
 
 
@@ -43,14 +42,18 @@ body {
     margin-top: 2px;
     min-width: 60%;
     max-width: 100%;
- 
-    
     justify-content: center;
     overflow: hidden;
 }
-br {
-    color: #333 5px;
+
+
+hr {
+    color: #778899;
+    width: 100rem;
+    height: 2px;
+    background-color: #333;
 }
+
 
 .countrySelection {
     display: flex;
@@ -64,26 +67,23 @@ br {
     padding: 5px;
 }
 
-#country {
-
+#destinationCountry {
     padding: 5px;
     margin-left: 5px;
 }
-
-
 
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    max-width:100%; 
+    max-width:100%;
     justify-content: space-around;
     align-content: space-around;
+    align-items: center;
 }
 
 .frame {
-    
     overflow: hidden;
     display: grid;
     padding: 40px;
@@ -91,7 +91,6 @@ br {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 150px;
 }
 
 .imageFrame {
@@ -106,6 +105,7 @@ img {
     height: 100%;
     object-fit: cover;
 }
+
 
 .imageName {
     color: white;
@@ -132,9 +132,8 @@ footer {
     padding-bottom: 2px;
 }
 
+
 a {
     color: #333;
     text-decoration: none;
-    
-
 }

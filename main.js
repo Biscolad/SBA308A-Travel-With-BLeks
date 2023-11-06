@@ -1,54 +1,29 @@
-import axios from 'axios';
-
+// code snippets from API website
+const url = 'https://travel-info-api.p.rapidapi.com/find-embassy?source=turkey&destination=usa';
 const options = {
-  method: 'GET',
-  url: 'https://ai-trip-planner.p.rapidapi.com/',
-  params: {
-    days: '3',
-    destination: 'London,UK'
-  },
-  headers: {
-    'X-RapidAPI-Key': '78bbde1bf9msh49c8ca25d9838c6p115afbjsncde3f07062d9',
-    'X-RapidAPI-Host': 'ai-trip-planner.p.rapidapi.com'
-  }
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '78bbde1bf9msh49c8ca25d9838c6p115afbjsncde3f07062d9',
+		'X-RapidAPI-Host': 'travel-info-api.p.rapidapi.com'
+	}
 };
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-}
 
+// using fetch API to communicate with an external API
+async function fetchData() {
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+        // const data = await response.json();
 
-
-
-const apiUrl = 'https://ai-trip-planner.p.rapidapi.com/'; 
-
-async function createResource() {
-  const newData = {
-    name: 'New Item',
-    description: 'Description of the new item',
-  };
-
-  try {
-    const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newData),
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to create a new resource');
+    } catch (error) {
+        console.error(error);
     }
-
-    const createdItem = await response.json();
-    console.log('New item created:', createdItem);
-  } catch (error) {
-    console.error('POST request error:', error);
   }
-}
+  
+  window.addEventListener('load', fetchData);
 
-createResource();
+
+
+
