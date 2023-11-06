@@ -72,6 +72,11 @@ hr {
     margin-left: 5px;
 }
 
+#country-Search {
+    padding: 5px;
+    margin-left: 5px;
+}
+
 
 .image-grid {
     display: grid;
