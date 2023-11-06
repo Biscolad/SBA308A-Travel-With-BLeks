@@ -1,5 +1,5 @@
 // code snippets from API website
-const url = 'https://travel-info-api.p.rapidapi.com/country-details';
+const url = 'https://travel-info-api.p.rapidapi.com/find-embassy?source=turkey&destination=usa';
 const options = {
 	method: 'GET',
 	headers: {
@@ -12,14 +12,14 @@ const options = {
 // using fetch API to communicate with an external API
 async function fetchCountryData() {
     try {
-        const response = await fetch('https://travel-info-api.p.rapidapi.com/country-details');
-        if (!response.ok) {
-            throw new Error('Error in fetching data');
-        }
+        const response = await fetch(url, options);
+        // if (!response.ok) {
+        //     throw new Error('Error in fetching data');
+        // }
        
         const result = await response.json();
 
-        console.log(result);
+        console.log(result.data);
         // const data = await response.json();
 
     } catch (error) {
@@ -27,6 +27,7 @@ async function fetchCountryData() {
     }
   }
  
+  fetchCountryData()
 
 //CREATE USER INTERACTION
 // ADD Event listener for COUNTRY SEARCH
@@ -59,7 +60,13 @@ async function postData(destination, result) {
   }
   
   
-
+//   const postButton = document.getElementById('countrySearch');
+//   postButton.addEventListener('click', async () => {
+//     const destination = destinationInput.value;
+    
+//     const response = await postData(destination, result);
+    
+//   });
   
 
 
