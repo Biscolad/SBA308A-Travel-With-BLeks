@@ -48,25 +48,44 @@ body {
     justify-content: center;
     overflow: hidden;
 }
+br {
+    color: #333 5px;
+}
+
+.countrySelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 6px; 
+    margin-bottom: 6px;
+    padding: 5px;
+}
+
+#country {
+
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
+
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-width:100%; 
-    /* flex-wrap: wrap; */
     justify-content: space-around;
     align-content: space-around;
 }
 
 .frame {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    
     overflow: hidden;
     display: grid;
-  
-    justify-content: center; */
     padding: 40px;
     position: relative;
     display: flex;
@@ -75,33 +94,11 @@ body {
     margin-left: 150px;
 }
 
-.frame2 {
-    width: 150px;
-    height: 150px;
+.imageFrame {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    overflow: hidden;
-    display: grid;
-    align-items: center;
-    justify-content: center; */
-    padding: 40px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 150px;
-    margin-top: 60px;
 }
-
-.frame3 {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-left: 300px;
-
-}
-
 
 
 img {

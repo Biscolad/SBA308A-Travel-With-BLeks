@@ -23,3 +23,32 @@ try {
 
 
 
+const apiUrl = 'https://ai-trip-planner.p.rapidapi.com/'; 
+
+async function createResource() {
+  const newData = {
+    name: 'New Item',
+    description: 'Description of the new item',
+  };
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newData),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to create a new resource');
+    }
+
+    const createdItem = await response.json();
+    console.log('New item created:', createdItem);
+  } catch (error) {
+    console.error('POST request error:', error);
+  }
+}
+
+createResource();
