@@ -32,7 +32,7 @@ async function fetchData() {
 // ADD Event listener for COUNTRY SEARCH
 const searchDestination = document.getElementById('destinationCountry');
 searchDestination.addEventListener('change', async() => {
-    const selectedCountry = searchDestination.ariaValueMax;
+    const selectedCountry = searchDestination.value;
     const response = await fetch(url);
     if (response.ok) {
         const result = await response.json();
