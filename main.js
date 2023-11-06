@@ -40,35 +40,27 @@ searchButton.addEventListener('click', async() => {
 
 
 //USER MANIPULATION
-
-
-   
-
+async function postData(destination, result) {
+    try {
+      const response = await fetch('https://travel-info-api.p.rapidapi.com/country-details', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ destination, result }),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to post data');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
   
 
-//ENABLE USER MANIPULATION THROUGH POST REQUEST
-// In main.js
-// const form = document.getElementById('yourFormId');
-
-// form.addEventListener('submit', async (event) => {
-//   event.preventDefault();
-
-//   const formData = new FormData(form);
-//   const postData = Object.fromEntries(formData);
-
-//   const response = await fetch('API_URL_FOR_POST_REQUEST', {
-//     method: 'POST',
-//     body: JSON.stringify(postData),
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-
-//   if (response.ok) {
-//     // Handle the response if needed
-//   }
-// });
-
+  
 
 
 
