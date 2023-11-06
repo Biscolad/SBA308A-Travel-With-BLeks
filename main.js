@@ -22,8 +22,14 @@ async function fetchData() {
     }
   }
   
-  window.addEventListener('load', fetchData);
+//   window.addEventListener('load', fetchData);
 
 
-
+//CREATE USER INTERACTION
+// ADD Event listener for DROP DOWN LIST
+document.querySelector('select').addEventListener('click', () => {
+    const searchCountry = document.getElementById('destinationCountry').value;
+   
+  });
+  
 
