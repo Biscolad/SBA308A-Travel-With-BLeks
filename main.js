@@ -1,5 +1,5 @@
 // code snippets from API website
-const url = 'https://travel-info-api.p.rapidapi.com/find-embassy?source=turkey&destination=usa';
+const url = 'https://travel-info-api.p.rapidapi.com/country-activities?country=turkey';
 const options = {
 	method: 'GET',
 	headers: {
@@ -48,7 +48,7 @@ async function postData(destination, result) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ destination, result }),
+        body: JSON.stringify({destination, result}),
       });
       if (!response.ok) {
         throw new Error('Failed to post data');
@@ -60,13 +60,28 @@ async function postData(destination, result) {
   }
   
   
-//   const postButton = document.getElementById('countrySearch');
-//   postButton.addEventListener('click', async () => {
-//     const destination = destinationInput.value;
-    
-//     const response = await postData(destination, result);
-    
-//   });
+//ORGANIZE JAVASCRIPT CODES INTO MODULE FILES AND IMPORT...
+// export async function fetchCountryData(destination, result) {
+//     export async function fetchCountryData(destination, result) {
+//         async function fetchCountryData() {
+//             try {
+//                 const response = await fetch(url, options);
+//                 // if (!response.ok) {
+//                 //     throw new Error('Error in fetching data');
+//                 // }
+               
+//                 const result = await response.json();
+        
+//                 console.log(result.data);
+//                 // const data = await response.json();
+        
+//             } catch (error) {
+//                 console.error('Error fetching country data:', error);
+//             }
+//           }
+
+//     }
+// }
   
 
 
